@@ -6,19 +6,20 @@ sys.stdin = open("/Users/jewerlykim/Desktop/python_Algorithm/codingtest/1963.txt
 testCase = int(sys.stdin.readline())
 
 # 100까지의 소수를 구하고 그다음 10000까지의 소수를 구한다.
+# 100까지의 소수를 구하는 과정
 hundredPrime = []
 untilHundred = [True for _ in range(101)]
-untilHundred[0], untilHundred[1] = False, False
-for prime in [2,3,5,7]:
-    for multi in range(prime*2, 101, prime):
+untilHundred[0], untilHundred[1] = False, False # 0, 1은 소수가 아니다.
+for prime in [2,3,5,7]: # 10까지의 소수는 2,3,5,7 뿐이다.
+    for multi in range(prime*2, 101, prime): # ex)prime이 2면 4부터 소수가 아니다!
         untilHundred[multi] = False
 for prime in range(101):
     if untilHundred[prime]:
         hundredPrime.append(prime)
-
+# 10000까지의 소수 배열 1000까지는 애초에 사용하지 않으므로 미리 false로 만들어준다.
 vistedPrime = [False for _ in range(1000)] + [True for _ in range(9000)]
 for prime in hundredPrime:
-    multiNumber = 1000 // prime
+    multiNumber = 1000 // prime # 1000 이전의 쓸데없는 연산을 줄이기 위함.
     for multi in range(prime * multiNumber, 10000, prime):
         vistedPrime[multi] = False
 
