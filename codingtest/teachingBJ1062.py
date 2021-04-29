@@ -1,3 +1,4 @@
+# 4.27 GG 내일 다시 풀기
 import sys
 N, K = map(int, sys.stdin.readline().split())
 capableTeachCount = K - 5
