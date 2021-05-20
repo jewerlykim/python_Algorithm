@@ -7,7 +7,6 @@ def solution(A):
     
     for i, value in num_dict.items():
         if value % 2 == 1 :
-            print(i)
             return i 
     
 
