@@ -19,7 +19,7 @@ def solution(s):
                 answer.append(num_dict[''.join(tmp_num)])
                 tmp_num.clear()
     
-    
+    print(int(''.join(answer)))
 
     return int(''.join(answer))
 

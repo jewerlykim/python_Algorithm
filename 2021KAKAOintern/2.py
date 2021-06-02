@@ -59,7 +59,7 @@ def solution(places):
                         is_ok = 0
                         break
         answer.append(is_ok)
-    # print(answer)
+    print(answer)
     return answer
 
 

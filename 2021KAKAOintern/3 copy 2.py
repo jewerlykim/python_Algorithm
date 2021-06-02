@@ -32,6 +32,7 @@ def solution(n, k, cmd):
                         x = heapq.heappop(right)
                         heapq.heappush(left, (-x,x))
                     if not left:
+                        print("dfsfdsdf")
                         x = heapq.heappop(right)
                         heapq.heappush(left, (-x,x))
             else: # 복구
@@ -45,9 +46,11 @@ def solution(n, k, cmd):
                     heapq.heappush(left, (-y,y))
                     heapq.heappush(left, (-recover, recover))
                 
-    for i in list(matrix_dict):
+    # for i in list(matrix_dict):
+    #     answer[i] = 'X'
+    for i in erased:
         answer[i] = 'X'
-    
+    print(''.join(answer))
     return ''.join(answer)
 
 solution(8, 2, ["D 2","C","U 3","C","D 4","C","U 2","Z","Z"])
