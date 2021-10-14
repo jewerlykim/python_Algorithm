@@ -16,7 +16,6 @@ def add_num(num):
         heapq.heappush(minus_heap, (-num, num))
 
 def print_num():
-    print(plus_heap, minus_heap)
     if plus_heap and minus_heap:
         plus_num = heapq.heappop(plus_heap)
         minus_num = heapq.heappop(minus_heap)[1]
